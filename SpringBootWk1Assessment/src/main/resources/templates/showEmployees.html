@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Home Page</title>
+</head>
+
+
+<body>
+	<h2>Employees with address</h2>
+	<div th:each="emp:${employees}">
+		<p th:text="${emp.firstName}"/>
+		<p th:text="${emp.lastName}"/>
+		<p th:text="${emp.hireDate}"/>
+		<br><p>=========================</p>
+		<a href="/home">Home</a>
+	</div>
+
+</body>
+
+</html>

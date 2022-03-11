@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Index Page</title>
+</head>
+<body>
+	<h4>Serach By Employee Address</h4>
+	<div th:each="addr:${addresses}">
+		<p th:text="${addr.id}" />
+		<a th:href="@{/seach(id=${addr.id})}">Search</a>
+		<p th:text="${addr.street}" />
+		<p th:text="${addr.city}" />
+		<p th:text="${addr.zipCode}" />
+		<p th:text="${addr.state}" />
+		<p th:text="${addr.country}" />
+		<br>
+		<p>=========================</p>
+	</div>
+	
+	<h4>Add an Employee</h4>
+	<form th:action="@{/addEmployee}" method="post" id="createForm">
+		Firstname: <input type="text" name="firstName" /><br>
+		Lastname: <input type="text" name="lastName" /><br> 
+		Hire Date: <input type="text" name="hireDate" /><br> 
+		Address Id: <input type="text" name="addrId" /><br>
+		<input type="submit" value="Add Employee"><br>
+	</form>
+
+
+</body>
+</html>
